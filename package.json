@@ -1,0 +1,29 @@
+{
+  "name": "backend-assignments-rujaxx",
+  "version": "1.0.0",
+  "description": "## TODO List",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exponentsoftware/backend-assignments-Rujaxx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exponentsoftware/backend-assignments-Rujaxx/issues"
+  },
+  "homepage": "https://github.com/exponentsoftware/backend-assignments-Rujaxx#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

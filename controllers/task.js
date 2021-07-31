@@ -6,8 +6,24 @@ const asyncHandler = require('../middleware/async')
 // @access    Public
 
 exports.getTasks = asyncHandler(async (req, res, next) => {
-  const tasks = await Task.find();
+  let query 
+
+  query = Task.find(req.query)
+
+  //Sorting
+  if(req.query.sort){
+    const sortBy = req.query.sort.split(",").join(" ")
+  }else{
+    query = query.sort("-createdAt")
+  }
+
+  const tasks = await query;
+
+   if(!tasks.length){
+    return res.status(404).json({success: false, message : "task not found"})
+  }
     res.status(200).json({success: true,count : tasks.length, data : tasks});
+    
   });
 
 // @desc      Get a task
@@ -37,9 +53,7 @@ exports.addTask = asyncHandler(async (req, res, next) => {
     res.status(201).json({
       success:true,
       data: task
-    })
-
-    
+    })    
   });
 
 // @desc      update a task

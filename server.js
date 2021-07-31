@@ -12,6 +12,7 @@ connectDB();
 
 //route files
 const task = require('./routes/task')
+const auth = require('./routes/auth')
 
 const app = express();
 
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 
 //Mount Routers
 app.use(task);
+app.use('/api/v1/auth', auth);
 
 const PORT = process.env.PORT || 5000;
 
